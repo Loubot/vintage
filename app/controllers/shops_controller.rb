@@ -22,7 +22,7 @@ class ShopsController < ApplicationController
 			redirect_to root_url
 		else
 			flash[:danger] = "Errors occured"
-			
+			redirect_to :back
 		end
 	end
 end
