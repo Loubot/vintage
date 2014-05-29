@@ -4,5 +4,5 @@ Vintage::Application.routes.draw do
 
   
 
-  get 'shops'         => 'shop_controller#shops',       :as => 'shops'
+  root :to => 'shops#index'
 end

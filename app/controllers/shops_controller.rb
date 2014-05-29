@@ -11,7 +11,18 @@ class ShopsController < ApplicationController
 		@shop = Shop.find_by_id(params[:id])
 	end
 
+	def new
+		@shop = Shop.new
+	end
+
 	def create
-		#todo
+		@shop = Shop.new(params[:shop])
+		if @shop.save
+			flash[:success] = "New shop created successfuly"
+			redirect_to root_url
+		else
+			flash[:danger] = "Errors occured"
+			
+		end
 	end
 end
