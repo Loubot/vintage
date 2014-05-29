@@ -24,6 +24,14 @@ group :production do
 	gem 'pg'
 end
 
+gem 'better_errors'
+
+gem 'binding_of_caller'
+
+gem 'annotate'
+
+gem 'thin'
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
