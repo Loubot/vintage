@@ -1,0 +1,11 @@
+<li class="media">
+	<a href="#" class='pull-left'>
+		<%= image_tag '/assets/lovely_dress.jpg', class: 'media-objcet', size: '240x240' %>
+	</a>
+	<div class='media-body'>
+		<h4 class='media-heading'><%= item.name %></h4>
+		<%= item.description %><br>
+		<%= number_to_currency(item.price, :unit => "€") %>
+	</div>
+</li>
+		

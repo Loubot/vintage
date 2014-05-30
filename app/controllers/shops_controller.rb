@@ -9,6 +9,8 @@ class ShopsController < ApplicationController
 
 	def show
 		@shop = Shop.find_by_id(params[:id])
+		@item = Item.new
+		@items = @shop.items.all
 	end
 
 	def new

@@ -1,4 +1,20 @@
-<%= @shop.name %>
 
-<a href="http://<%= @shop.url %>"><br>
-<%= image_tag @shop.logo %>
+
+<div class='container-fluid show_page_body'>
+	<div class='col-lg-2 left-border'>
+	</div> <!-- end of colo-lg-2 -->
+	<div class="col-lg-9">
+		<div class='media'>
+			<a class='pull-left' href="<%= @shop.url %>">
+			<%= image_tag @shop.logo, class: 'media-object', size:"128x128" %>
+			</a>
+			<div class='media-body'>
+				<h4 class='media-heading'><%= @shop.name %></h4>
+				<%= @shop.description %>
+			</div> <!-- end of media-body -->
+		</div> <!-- end of media -->
+		<ul class="media-list">
+			<%= render @items %>
+		</ul>
+	</div> <!-- end of col-lg-9 -->
+</div> <!-- end of show_page_body -->
