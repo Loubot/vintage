@@ -14,7 +14,7 @@
 #
 
 class Merchant < ActiveRecord::Base
-  attr_accessible :address, :email, :first_name, :last_name, :phone, :website
+  #attr_accessible :address, :email, :first_name, :last_name, :phone, :website
 
   has_many :shops
 end

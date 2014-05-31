@@ -10,6 +10,7 @@ class CreateShops < ActiveRecord::Migration
       t.float :lon
       t.string :facebook
       t.string :twitter
+      t.text :description
 
       t.timestamps
     end

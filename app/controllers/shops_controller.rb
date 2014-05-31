@@ -27,4 +27,10 @@ class ShopsController < ApplicationController
 			redirect_to :back
 		end
 	end
+
+	private
+
+		def shop_params
+			params.require(:shop).permit(:address, :facebook, :lat, :lat, :logo, :lon, :name, :twitter, :url, :description)
+		end
 end

@@ -17,7 +17,7 @@
 #
 
 class Shop < ActiveRecord::Base
-  attr_accessible :address, :facebook, :lat, :lat, :logo, :lon, :name, :twitter, :url
+  #attr_accessible :address, :facebook, :lat, :lat, :logo, :lon, :name, :twitter, :url, :description
   belongs_to :merchant, dependent: :destroy
 
   has_many :items

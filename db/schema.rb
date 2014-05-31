@@ -9,33 +9,33 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140530231655) do
+ActiveRecord::Schema.define(version: 20140530231655) do
 
-  create_table "items", :force => true do |t|
+  create_table "items", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.float    "size"
     t.integer  "shop_id"
-    t.decimal  "price",       :precision => 8, :scale => 2
+    t.decimal  "price",       precision: 8, scale: 2
     t.binary   "available"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "merchants", :force => true do |t|
+  create_table "merchants", force: true do |t|
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "address"
     t.string   "website"
     t.integer  "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "shops", :force => true do |t|
+  create_table "shops", force: true do |t|
     t.string   "name"
     t.string   "logo"
     t.string   "url"
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(:version => 20140530231655) do
     t.float    "lon"
     t.string   "facebook"
     t.string   "twitter"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
