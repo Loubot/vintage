@@ -15,6 +15,8 @@
 
 class Merchant < ActiveRecord::Base
   #attr_accessible :address, :email, :first_name, :last_name, :phone, :website
+  validates :email, confirmation: true
+  validates :email_confirmation, presence: true
 
   has_many :shops
 end

@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem 'pg', group: :production
 
+gem "possessive" 
 
 gem 'better_errors'
 

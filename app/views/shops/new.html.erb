@@ -20,7 +20,12 @@
                 </div>
                 <div class="col-xs-11 col-sm-11 col-md-11">
                   <div class="form-group">
-                      <%= f.text_field :url, class: "form-control input-sm", :placeholder => 'Website URL' %>
+                      <%= f.text_field :url, class: "form-control input-sm", :placeholder => 'www.etc.com' %>
+                  </div>
+                </div>   
+                <div class="col-xs-11 col-sm-11 col-md-11">
+                  <div class="form-group">
+                      <%= f.text_area :description, class: "form-control input-sm", :placeholder => 'Describe your shop' %>
                   </div>
                 </div>                       
                 <%= f.submit 'Create shop', class: 'btn btn-primary shop-signup-submit' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530231655) do
+ActiveRecord::Schema.define(version: 20140601200931) do
 
   create_table "items", force: true do |t|
     t.string   "name"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140530231655) do
     t.float    "size"
     t.integer  "shop_id"
     t.decimal  "price",       precision: 8, scale: 2
-    t.binary   "available"
+    t.boolean  "available"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140530231655) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "merchant_id"
   end
 
 end

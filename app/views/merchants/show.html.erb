@@ -1,0 +1,14 @@
+<%= "#{@merchant.first_name} #{@merchant.last_name}" %><br>
+<%= @merchant.email %><br>
+<%= @merchant.address %><br>
+<% if !@merchant.website.nil? %>
+	<%= link_to @merchant.website %><br>
+<% end %>
+
+<%= @merchant.phone %>
+
+<h3><%= @merchant.first_name.possessive %> shop</h3>
+
+<% @merchant.shops.each do |shop| %>
+	<%= image_tag shop.logo, size: "128x128" %>
+<% end %>

@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration
       t.float :size
       t.integer :shop_id
       t.float :price
-      t.binary :available
+      t.boolean :available
 
       t.timestamps
     end
