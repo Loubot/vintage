@@ -36,7 +36,9 @@ gem 'binding_of_caller'
 
 gem 'annotate'
 
-gem 'thin'
+gem 'puma'
+
+gem 'paperclip'
 
 #gem 'protected_attributes'
 
