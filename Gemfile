@@ -38,7 +38,7 @@ gem 'annotate'
 
 gem 'puma'
 
-gem 'paperclip'
+gem 'carrierwave'
 
 #gem 'protected_attributes'
 
