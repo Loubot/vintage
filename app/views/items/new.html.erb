@@ -27,6 +27,11 @@
                   <div class="form-group">
                       <%= f.number_field :price, class: "form-control input-sm", :placeholder => 'How much?' %>
                   </div>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11">
+                  <div class="form-group">
+                      <%= f.file_field :image1, class: "form-control input-sm", :placeholder => 'How much?' %>
+                  </div>
                 </div>                       
                 <%= f.submit 'Create shop', class: 'btn btn-primary shop-signup-submit' %>
               <% end %>
