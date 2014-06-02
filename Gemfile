@@ -38,7 +38,8 @@ gem 'annotate'
 
 gem 'puma'
 
-gem 'paperclip'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 
 #gem 'protected_attributes'
 
