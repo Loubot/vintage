@@ -15,7 +15,7 @@
 
 class Item < ActiveRecord::Base
   #attr_accessible :available, :description, :name, :price, :shop_id, :size
-  
+  mount_uploader :avatar, AvatarUploader
   
   belongs_to :shop, dependent: :destroy
 end
