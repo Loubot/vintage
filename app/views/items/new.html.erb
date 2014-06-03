@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-xs-11 col-sm-11 col-md-11">
                   <div class="form-group">
-                      <%= f.file_field :avatar %>
+                      <%= f.file_field :avatar, multiple: true %>
                   </div>
                 </div>                       
                 <%= f.submit 'Create shop', class: 'btn btn-primary shop-signup-submit' %>
@@ -46,4 +46,9 @@
           </div>
       </div>
 </div>
+
+<form action="demo_form.asp">
+  Select images: <input type="file" name="img" multiple>
+  <input type="submit">
+</form> 
                        
