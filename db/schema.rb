@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140602194627) do
   create_table "shops", force: true do |t|
     t.string   "name"
     t.string   "logo"
+    t.string   "shop_bucket"
     t.string   "url"
     t.string   "address"
     t.float    "lat"

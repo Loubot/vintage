@@ -3,6 +3,7 @@ class CreateShops < ActiveRecord::Migration
     create_table :shops do |t|
       t.string :name
       t.string :logo
+      t.string :shop_bucket
       t.string :url
       t.string :address
       t.float :lat

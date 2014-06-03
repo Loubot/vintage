@@ -15,7 +15,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def store_dir
 
     #{}"uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-    "itemImages/#{model.shop.name.to_s.underscore}/#{model.name}"
+    "itemImages/#{model.shop.shop_bucket}/#{model.name}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

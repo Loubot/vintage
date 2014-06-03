@@ -24,8 +24,16 @@ class Shop < ActiveRecord::Base
 
  	before_validation :smart_add_url_protocol
  	before_save { url.downcase! }
+ 	before_save :shop_bucket
+
+
+ 	def shop_bucket
+		self.shop_bucket = self.name.to_s.squish.downcase.tr(" ","_")
+	end
 
 protected
+
+	
 
 	def smart_add_url_protocol
 	  unless self.url[/\Ahttp:\/\//] || self.url[/\Ahttps:\/\//]
