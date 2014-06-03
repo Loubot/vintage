@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
@@ -36,9 +36,11 @@ gem 'binding_of_caller'
 
 gem 'annotate'
 
-gem 'puma'
+gem 'thin'
 
-gem 'carrierwave'
+gem 'carrierwave', git: 'http://github.com/carrierwaveuploader/carrierwave.git'
+
+gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
 
 #gem 'protected_attributes'
 
