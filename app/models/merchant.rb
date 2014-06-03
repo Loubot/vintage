@@ -9,8 +9,8 @@
 #  address    :string(255)
 #  website    :string(255)
 #  phone      :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 class Merchant < ActiveRecord::Base

@@ -42,6 +42,10 @@ gem 'carrierwave', git: 'http://github.com/carrierwaveuploader/carrierwave.git'
 
 gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
 
+gem "nested_form"
+
+gem 'rmagick'
+
 #gem 'protected_attributes'
 
 

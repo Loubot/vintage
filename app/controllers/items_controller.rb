@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
 	
 	def new
 		@item = Item.new
-		@sizes = (4..32).step(0.5).to_a
+		@photos = @item.photos.build
 	end
 
 	def create
@@ -21,6 +21,10 @@ class ItemsController < ApplicationController
 		
 		# redirect_to 'merchants/index'
 		if @item.save
+			params[:photos]['avatar'].each do |photo|
+				@photo = @item.photos.create!(avatar: photo, item_id: @item.id)
+
+			end
 			flash[:success] = "New item successfully saved"
 			render 'new'
 		else
@@ -32,6 +36,6 @@ class ItemsController < ApplicationController
 
 	private
 		def item_params
-			params.require(:item).permit(:available, :description, :name, :price, :shop_id, :size, :avatar)
+			params.require(:item).permit(:available, :description, :name, :price, :shop_id, :size, post_attributes: [:id, :item_id, :avatar])
 		end
 end
