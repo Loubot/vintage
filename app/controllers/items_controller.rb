@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
-	before_action :create, only: [:initUpload]
 	
-
-	def initUpload
-		uploader = AvatarUploader.new
+	
+	def show 
+		@item = Item.find(params[:id])
 	end
+
+	def index
+		@items = Item.all
+	end	
 	
 	def new
 		@item = Item.new
