@@ -42,8 +42,7 @@ gem 'carrierwave', git: 'http://github.com/carrierwaveuploader/carrierwave.git'
 
 gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
 
-#gem 'protected_attributes'
-
+gem "nested_form"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -8,14 +8,17 @@
 #  size        :float
 #  shop_id     :integer
 #  price       :decimal(8, 2)
-#  available   :binary
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  available   :boolean
+#  created_at  :datetime
+#  updated_at  :datetime
 #
 
 class Item < ActiveRecord::Base
   #attr_accessible :available, :description, :name, :price, :shop_id, :size
-  mount_uploader :avatar, AvatarUploader
+  
   
   belongs_to :shop, dependent: :destroy
+  has_many :photos
+  accepts_nested_attributes_for :photos
+
 end

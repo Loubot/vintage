@@ -1,1 +1,5 @@
-<%= image_tag(@item.avatar.url) %>
+<%= @item.name %><br>
+
+<% @photos.each do |photo| %>
+	<%= image_tag photo.avatar.url %>
+<% end %>
