@@ -8,6 +8,14 @@ class PhotosController < ApplicationController
 	def create
 		@photo = Photo.create(photo_params)
 	end
+
+	def destroy
+		@photo = Photo.find(params[:id])
+		@item = @photo.item
+		@photo.destroy
+		flash[:danger] = "Photo successfully deleted!"
+		redirect_to item_url(@item)
+	end
 	
 	private
 	def photo_params

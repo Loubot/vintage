@@ -1,9 +1,14 @@
 <h1>Painting Gallery</h1>
-
-<div id="photos">
-  <%= render @photos %>
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+		
+		  <%= render @photos %>
+		
+	</div>
 </div>
 <div class="clear"></div>
+
+<%= @item.name %><br>
 
 <%= form_for Photo.new do |f| %>
   <%= f.label :avatar, "Upload paintings:" %>
@@ -17,3 +22,5 @@
   <div class="progress"><div class="bar" style="width: 25%"></div></div>
 </div>
 </script>
+
+

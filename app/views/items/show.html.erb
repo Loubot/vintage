@@ -1,1 +1,1 @@
-<%= image_tag(@item.avatar.url) %>
+<%= link_to @item.name, photos_path(id: @item.id) %>

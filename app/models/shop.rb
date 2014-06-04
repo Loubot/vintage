@@ -22,7 +22,7 @@ class Shop < ActiveRecord::Base
   #attr_accessible :address, :facebook, :lat, :lat, :logo, :lon, :name, :twitter, :url, :description
   belongs_to :merchant, dependent: :destroy
 
-  has_many :items
+  has_many :items, dependent: :destroy
 
  	before_validation :smart_add_url_protocol
  	before_save { url.downcase! }

@@ -18,8 +18,8 @@ class Item < ActiveRecord::Base
   #attr_accessible :available, :description, :name, :price, :shop_id, :size
   
   
-  belongs_to :shop, dependent: :destroy
-  has_many :photos
+  belongs_to :shop
+  has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :photos
 
 end

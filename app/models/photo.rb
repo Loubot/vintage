@@ -10,6 +10,6 @@
 #
 
 class Photo < ActiveRecord::Base
-	belongs_to :item, dependent: :destroy
+	belongs_to :item
 	mount_uploader :avatar, AvatarUploader
 end

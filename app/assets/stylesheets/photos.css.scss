@@ -18,3 +18,23 @@
     }
   }
 }
+
+.photo {
+  border: solid 1px #CCC;
+  padding: 10px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  .name {
+    padding-top: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .actions {
+    font-size: 10px;
+    text-align: center;
+    color: #777;
+  }
+}
