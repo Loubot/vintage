@@ -46,6 +46,8 @@ gem "nested_form"
 
 gem 'rmagick'
 
+gem 'jquery-fileupload-rails'
+
 #gem 'protected_attributes'
 
 
