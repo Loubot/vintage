@@ -14,7 +14,7 @@ class PhotosController < ApplicationController
 		@item = @photo.item
 		@photo.destroy
 		flash[:danger] = "Photo successfully deleted!"
-		redirect_to item_url(@item)
+		redirect_to edit_item_path(@item)
 	end
 	
 	private

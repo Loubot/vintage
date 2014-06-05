@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
 	
-	
 	def show 
 		@item = Item.find(params[:id])
 	end
@@ -21,15 +20,28 @@ class ItemsController < ApplicationController
 		
 		# redirect_to 'merchants/index'
 		if @item.save
-			params[:photos]['avatar'].each do |photo|
-				@photo = @item.photos.create!(avatar: photo, item_id: @item.id)
+			# params[:photos]['avatar'].each do |photo|
+			# 	@photo = @item.photos.create!(avatar: photo, item_id: @item.id)
 
-			end
-			flash[:success] = "New item successfully saved"
-			render 'new'
+			# end
+			flash[:success] = "New item successfully saved, Now add a photo"
+			redirect_to edit_item_path(@item)
 		else
 			flash[:danger] = "Could not save item #{@item.errors.full_messages}"
 			redirect_to :back
+		end
+	end
+
+	def edit
+		@item = Item.find(params[:id])
+		@photos = @item.photos
+	end
+
+	def update
+		if @user.update_attributes(params[:item])
+			flash[:success] = "Update successful"
+		else
+			flash[:danger] = "Could not update"
 		end
 	end
 

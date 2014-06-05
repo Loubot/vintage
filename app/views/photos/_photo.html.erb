@@ -1,10 +1,17 @@
-<div class="photo">
-  <%= image_tag photo.avatar.url, size: "100x100", data: { src: "holder.js/100%x180"} %>
-  <div class="name"><%= photo.name %></div>
-  <div class="actions">
-    <%= link_to "edit", edit_photo_path(photo) %> |
-    <%= link_to "remove", photo, :confirm => 'Are you sure?', :method => :delete %>
+
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <%= image_tag photo.avatar.url %>
+   		<%= link_to "edit", edit_photo_path(photo) %> |
+    	<%= link_to "remove", photo, :confirm => 'Are you sure?', :method => :delete %>
+    </a>
   </div>
-</div>	
+
     
+  
+
+
+
+
+
   

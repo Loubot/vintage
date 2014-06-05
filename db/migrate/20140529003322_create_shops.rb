@@ -2,6 +2,7 @@ class CreateShops < ActiveRecord::Migration
   def change
     create_table :shops do |t|
       t.string :name
+      t.integer :merchant_id
       t.string :logo
       t.string :shop_bucket
       t.string :url

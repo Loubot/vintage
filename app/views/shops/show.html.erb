@@ -13,8 +13,17 @@
 				<%= @shop.description %>
 			</div> <!-- end of media-body -->
 		</div> <!-- end of media -->
-		<ul class="media-list">
-			<%= render @items %>
-		</ul>
+
+			
+		<div class="row">
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <%= render @items %>
+		      
+		    </div>
+		  </div>
+		</div>
+
+		
 	</div> <!-- end of col-lg-9 -->
 </div> <!-- end of show_page_body -->

@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140603204925) do
 
   create_table "shops", force: true do |t|
     t.string   "name"
+    t.integer  "merchant_id"
     t.string   "logo"
     t.string   "shop_bucket"
     t.string   "url"
@@ -56,7 +57,6 @@ ActiveRecord::Schema.define(version: 20140603204925) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "merchant_id"
   end
 
 end
