@@ -73,7 +73,7 @@
 <div class="clear"></div>
 
 
-<%= form_for Photo.new do |f| %>
+<%= form_for [@item,Photo.new] do |f| %>
   <%= f.label :avatar, "Upload photos:" %>
   <%= f.hidden_field :item_id, value: @item.id %>
   <%= f.file_field :avatar, multiple: true, name: "photo[avatar]" %>

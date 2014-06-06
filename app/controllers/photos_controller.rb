@@ -7,6 +7,7 @@ class PhotosController < ApplicationController
 
 	def create
 		@photo = Photo.create(photo_params)
+		@item = @photo.item
 	end
 
 	def destroy
