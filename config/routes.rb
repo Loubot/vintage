@@ -1,8 +1,9 @@
 Vintage::Application.routes.draw do
   resources :merchants
   resources :shops
-  resources :items
-  resources :photos
+  resources :items do
+  	resources :photos
+  end
   
 
   root :to => 'shops#index'
