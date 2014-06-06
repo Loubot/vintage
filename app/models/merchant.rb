@@ -15,19 +15,22 @@
 
 class Merchant < ActiveRecord::Base
   #attr_accessible :address, :email, :first_name, :last_name, :phone, :website
-  validates :email, confirmation: true
+  validates :email, confirmation: true, uniqueness: { case_sensitive: false }
   validates :email_confirmation, presence: true
+  has_many :shops, dependent: :destroy
 
-  has_many :shops
+  
 
   before_validation :smart_add_website_protocol
- 	before_save { website.downcase! }
+ 	before_save { website.downcase! if website }
 
 	protected
 
 	def smart_add_website_protocol
-	  unless self.website[/\Ahttp:\/\//] || self.website[/\Ahttps:\/\//]
-	    self.website = "http://#{self.website}"
-	  end
+		if self.website != nil
+		  unless self.website[/\Ahttp:\/\//] || self.website[/\Ahttps:\/\//]
+		    self.website = "http://#{self.website}"
+		  end
+		end
 	end
 end

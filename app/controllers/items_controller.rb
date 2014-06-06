@@ -38,8 +38,10 @@ class ItemsController < ApplicationController
 	end
 
 	def update
-		if @user.update_attributes(params[:item])
+		@item = Item.find(params[:id])
+		if @item.update_attributes(item_params)
 			flash[:success] = "Update successful"
+			redirect_to edit_item_path(@item)
 		else
 			flash[:danger] = "Could not update"
 		end
