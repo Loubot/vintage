@@ -17,4 +17,7 @@ $(document).ready ->
       if data.context
         progress = parseInt(data.loaded / data.total * 100, 10)
         $('.progress-bar').css('width', progress + '%')
-        
+        if progress == 100 
+          setTimeout ->
+            $('.upload').css('display', 'none')
+          , 2000
