@@ -33,57 +33,64 @@
                       <%= f.number_field :price, class: "form-control input-sm", :placeholder => 'How much?' %>
                   </div>
                 </div>
-                <!-- <div class="col-xs-11 col-sm-11 col-md-11">
-                  <div class="form-group">
-                      <%= f.fields_for :photos do |photo| %>
-                        <%= photo.label :avatar %>
-                        <%= photo.file_field :avatar, multiple: true, name: "photos[avatar][]" %>
-                      <% end %>
-                  </div>
-                </div>     -->                   
+                      
                 <%= f.submit 'Update Item', class: 'btn btn-primary shop-signup-submit' %>
               <% end %>
-
+              <%= form_for [@item,Photo.new] do |f| %>
+                <%= f.label :avatar, "Upload photos:" %>
+                <%= f.hidden_field :item_id, value: @item.id %>
+                <%= f.file_field :avatar, multiple: true, name: "photo[avatar]", class: "filestyle"  %>
+                
+              <% end %>           
           </div> <!-- end of panel-body -->
             </div> <!-- end of panel panel-default -->
+            <script id="template-upload" >
+            <div class="upload col-md-4">
+              {%=o.name%}
+              <div class="progress progress-striped col-md-4">
+                <div class="progress-bar progress-bar-success col-md-4"  role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                  
+                </div> <!-- //end of progress-bar-success  -->
+              </div> <!-- //end of progress bar-striped -->
+            </div> <!-- //end of upload -->
+            </script> <!-- end of template-upload -->
           </div> <!-- end of col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4 -->
           <div class="col-md-3 right-side">
-            <script id="template-upload" type="text/x-tmpl">
-              <div class="upload">
-                {%=o.name%}
-                <div class="progress progress-striped">
-                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-                    
-                  </div> <!-- //end of progress-bar-success  -->
-                </div> <!-- //end of progress bar-striped -->
-              </div> <!-- //end of upload -->
-              </script> <!-- end of template-upload -->
+            
           </div>
       </div> <!-- end of row centered-form -->
+      <div class="uploaded_photos">
+        <div class="row bla">
+         
+            
+              <%= render @photos %>
+            
+         
+        
+       
+
+        </div> <!-- end of row -->
+      </div> <!-- end of upload_photos -->
+      <div class="clear"></div>
+      <div class="row">
+        <div class="col-md-7">
+          
+        </div>
+        <div class="col-md-5 upload_holder">
+          
+          </div>
+      </div> <!-- end of row -->
 </div> <!-- end of container -->
-<div class="uploaded_photos">
-  <div class="row bla">
-   
-      
-        <%= render @photos %>
-      
+
+
+
+
+
+<div class="clear"></div>
+
+
+
     
-  </div> <!-- end of row -->
-</div> <!-- end of upload_photos -->
-<div class="clear"></div>
-
-
-<%= form_for [@item,Photo.new] do |f| %>
-  <%= f.label :avatar, "Upload photos:" %>
-  <%= f.hidden_field :item_id, value: @item.id %>
-  <%= f.file_field :avatar, multiple: true, name: "photo[avatar]" %>
-<% end %>
-
-<div class="clear"></div>
-
-
-
-
 
 
 

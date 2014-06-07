@@ -9,7 +9,7 @@ $(document).ready ->
       file = data.files[0]
       if types.test(file.type) || types.test(file.name)
         data.context = $(tmpl("template-upload", file))
-        $('.right-side').append(data.context)
+        $('.panel-body').append(data.context)
         data.submit()
       else
         alert("#{file.name} is not a gif, jpeg, or png image file")
@@ -20,4 +20,4 @@ $(document).ready ->
         if progress == 100 
           setTimeout ->
             $('.upload').css('display', 'none')
-          , 2000
+          , 6000
