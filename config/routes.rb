@@ -1,4 +1,5 @@
 Vintage::Application.routes.draw do
+  devise_for :merchants
   resources :merchants do
   	resources :shops
   end

@@ -14,6 +14,10 @@
 #
 
 class Merchant < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   #attr_accessible :address, :email, :first_name, :last_name, :phone, :website
   validates :email, confirmation: true, uniqueness: { case_sensitive: false }
   validates :email_confirmation, presence: true

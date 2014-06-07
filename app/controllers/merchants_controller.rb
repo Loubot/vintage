@@ -1,5 +1,6 @@
 class MerchantsController < ApplicationController
-	
+	before_action :authenticate_merchant!
+
 	def show
 		@merchant = Merchant.find(params[:id])
 		@shop = @merchant.shops.first
@@ -19,7 +20,7 @@ class MerchantsController < ApplicationController
 		
 		if @merchant.save
 			flash[:success] = "Welcome to Vintage.ie. Let's get started"
-			redirect_to @merchant
+			redirect_to merchants_path
 		else
 			flash[:danger] = "Unable to create shop"
 			render 'new'
@@ -29,6 +30,6 @@ class MerchantsController < ApplicationController
 	private
 
 	def merchant_params
-		params.require(:merchant).permit!
+		params.require(:merchant).permit(:email, :email_confirmation, :password, :password_confirmation)
 	end
 end
