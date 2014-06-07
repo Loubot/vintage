@@ -20,16 +20,31 @@ class MerchantsController < ApplicationController
 		
 		if @merchant.save
 			flash[:success] = "Welcome to Vintage.ie. Let's get started"
-			redirect_to merchants_path
+			redirect_to edit_merchant_path(@merchant)
 		else
 			flash[:danger] = "Unable to create shop"
 			render 'new'
 		end
 	end
 
+	def edit
+		@merchant = Merchant.find(params[:id])
+	end
+
+	def update
+		@merchant = Merchant.find(current_merchant.id)
+		if @merchant.update_attributes(merchant_params)
+			flash[:success] = 'Good stuff'
+			redirect_to edit_merchant_path(@merchant)
+		else
+			flash[:danger] = "Nope #{@merchant.errors.full_messages}"
+			redirect_to edit_merchant_path(@merchant)
+		end
+	end
+
 	private
 
 	def merchant_params
-		params.require(:merchant).permit(:email, :email_confirmation, :password, :password_confirmation)
+		params.require(:merchant).permit(:first_name, :last_name, :address, :website, :phone)
 	end
 end

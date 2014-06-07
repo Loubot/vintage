@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row centered-form">
+    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= current_merchant.email %><small> edit your details</small></h3>
+        </div> <!-- end of panel-heading -->
+        <div class="panel-body">
+          <%= form_for @merchant, html: { role: 'form' } do |f| %>
+            <div class="col-xs-11 col-sm-11 col-md-11">
+              <div class="form-group">
+                  <%= f.text_field :first_name, class: "form-control input-sm", :placeholder => 'First Name' %>
+              </div>
+            </div>
+            <div class="col-xs-11 col-sm-11 col-md-11">
+              <div class="form-group">
+                  <%= f.text_field :last_name, class: "form-control input-sm", :placeholder => 'Last Name' %>
+              </div>
+            </div>
+            <div class="col-xs-11 col-sm-11 col-md-11">
+              <div class="form-group">
+                  <%= f.text_area :address, class: "form-control input-sm", :placeholder => 'Address' %>
+              </div>
+            </div>
+            <div class="col-xs-11 col-sm-11 col-md-11">
+              <div class="form-group">
+                  <%= f.text_field :website, class: "form-control input-sm", :placeholder => 'Your website' %>
+              </div>
+            </div>
+            <%= f.submit 'Update' %>
+          <% end %>
+        </div>
+      </div> <!-- end of panel_default -->
+    </div> <!-- end of col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4 -->
+  </div> <!-- end of centere-form -->
+</div> <!-- end of container-fluid -->

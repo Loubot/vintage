@@ -19,8 +19,8 @@ class Merchant < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   #attr_accessible :address, :email, :first_name, :last_name, :phone, :website
-  validates :email, confirmation: true, uniqueness: { case_sensitive: false }
-  validates :email_confirmation, presence: true
+  validates :email, confirmation: true, uniqueness: { case_sensitive: false }, on: :create
+  validates :email_confirmation, presence: true, on: :create
   has_many :shops, dependent: :destroy
 
   
