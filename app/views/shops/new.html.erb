@@ -27,7 +27,14 @@
                   <div class="form-group">
                       <%= f.text_area :description, class: "form-control input-sm", :placeholder => 'Describe your shop' %>
                   </div>
-                </div>                       
+                </div>
+                <%= form_for [@shop,Photo.new] do |t| %>
+                  <%= t.label :avatar, "Upload photos:" %>
+                  <%= t.hidden_field :item_id, value: @item.id %>
+                  <%= t.file_field :avatar, multiple: true, name: "photo[avatar]", class: "filestyle"  %>
+                  
+                <% end %>   
+                <%= f.hidden_field :merchant_id, value: current_merchant.id %>
                 <%= f.submit 'Create shop', class: 'btn btn-primary shop-signup-submit' %>
               <% end %>
 
@@ -36,4 +43,5 @@
           </div>
       </div>
 </div>
-                       
+         
+         

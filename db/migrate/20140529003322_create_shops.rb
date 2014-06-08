@@ -13,6 +13,7 @@ class CreateShops < ActiveRecord::Migration
       t.string :facebook
       t.string :twitter
       t.text :description
+      t.string :avatar, :string
 
       t.timestamps
     end

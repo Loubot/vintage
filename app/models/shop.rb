@@ -24,9 +24,13 @@ class Shop < ActiveRecord::Base
 
   has_many :items, dependent: :destroy
 
+  has_many :photos
+  accepts_nested_attributes_for :photos
+
  	before_validation :smart_add_url_protocol
  	before_save { url.downcase! }
  	before_save :shop_bucket
+ 	
 
 
  	def shop_bucket
@@ -35,7 +39,6 @@ class Shop < ActiveRecord::Base
 
 protected
 
-	
 
 	def smart_add_url_protocol
 	  unless self.url[/\Ahttp:\/\//] || self.url[/\Ahttps:\/\//]

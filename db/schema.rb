@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20140607201221) do
     t.string   "facebook"
     t.string   "twitter"
     t.text     "description"
+    t.string   "avatar"
+    t.string   "string"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

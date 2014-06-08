@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+	before_action :authenticate_merchant!
+
 	def shop
 		@shop = Shop.find_by_id(params[:id])
 	end
@@ -18,7 +20,7 @@ class ShopsController < ApplicationController
 	end
 
 	def create
-		@shop = Shop.new(params[:shop])
+		@shop = Shop.new(shop_params)
 		if @shop.save
 			flash[:success] = "New shop created successfuly"
 			redirect_to root_url
@@ -31,6 +33,6 @@ class ShopsController < ApplicationController
 	private
 
 		def shop_params
-			params.require(:shop).permit(:address, :facebook, :lat, :lat, :logo, :lon, :name, :twitter, :url, :description)
+			params.require(:shop).permit(:address, :facebook, :lat, :lat, :logo, :lon, :name, :twitter, :url, :merchant_id, :description)
 		end
 end
